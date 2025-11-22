@@ -1,0 +1,30 @@
+.icon-font {
+    font-size: unset;
+  }
+
+  @media (max-width: 576px) {
+    table td:not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(6)),
+    table th:not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(6)) {
+      display: none;
+    }
+  }
+.status-dot {
+width: 14px;
+height: 14px;
+border-radius: 50%;
+display: inline-block;
+margin-right: 8px;
+transition: background-color 0.3s ease;
+}
+.online { background-color: #28a745; }  /* 绿色 */
+.offline { background-color: #ccc; }    /* 灰色 */
+
+/* 状态变化动画 */
+@keyframes pulse {
+0% { transform: scale(1); opacity: 1; }
+50% { transform: scale(1.5); opacity: 0.6; }
+100% { transform: scale(1); opacity: 1; }
+}
+.status-change {
+animation: pulse 1s ease;
+}
