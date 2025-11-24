@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-bs-theme="auto" class="bg-body-tertiary">
 <head>
   <meta charset="UTF-8">
   <title>登录 - Wake On LAN 控制台</title>
@@ -31,11 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/icons/iconfont.css" id="iconfont" rel="stylesheet">
   <link href="./assets/css/main.css" id="main-style" rel="stylesheet">
+    <script src="./assets/js/darkmode.js"></script>
 </head>
-<body class="bg-light">
+<body class="bg-body-tertiary">
 <div class="container d-flex justify-content-center align-items-center" style="height:100vh;">
   <div class="card shadow-lg p-4" style="max-width:400px; width:100%;">
-    <h3 class="text-center mb-4"><i class="icon-font ico-power"></i>登录</h3>
+    <h3 class="text-center mb-4"><i class="icon-font ico-power"></i> 登录</h3>
     <p class="text-center text-body-secondary">登录 Wake on LAN 控制台</p>
     <?php if ($error): ?>
       <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>

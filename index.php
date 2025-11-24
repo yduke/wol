@@ -15,7 +15,7 @@ if (file_exists($jsonFile)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-bs-theme="auto" class="bg-body-tertiary">
 <head>
   <meta charset="UTF-8">
   <title>Wake On LAN 控制台</title>
@@ -24,8 +24,9 @@ if (file_exists($jsonFile)) {
   <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/icons/iconfont.css" id="iconfont" rel="stylesheet">
   <link href="./assets/css/main.css" id="main-style" rel="stylesheet">
+  <script src="./assets/js/darkmode.js"></script>
 </head>
-<body class="bg-light">
+<body class="bg-body-tertiary">
 <header class="p-2 text-bg-dark">
   <div class="container">
     <div class="d-flex justify-content-between align-items-center">
@@ -33,16 +34,13 @@ if (file_exists($jsonFile)) {
         <i class="icon-font ico-power"></i>
         <span>Wake On LAN 控制台</span>
       </h1>
-      <a href="logout.php" class="btn btn-light btn-sm"><i class="icon-font ico-logout"></i> 登出</a>
+      <a href="logout.php" class="btn btn-secondary btn-sm"><i class="icon-font ico-logout"></i> 登出</a>
 
     </div>
   </div>
 </header>
 
 <div class="container py-4">
-
-<div id="result" class="mt-4"></div>
-
   <div id="table-container">
     <?php if (empty($hosts)): ?>
       <div class="alert alert-warning text-center">未找到主机配置，请编辑 <code>hosts.json</code></div>
@@ -80,17 +78,14 @@ if (file_exists($jsonFile)) {
       </table>
     <?php endif; ?>
   </div>
-
-  
 </div>
-
 
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <a href="#" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="WOL" style="font-size: 1.5rem;">
         <i class="icon-font ico-power"></i>
-      </a> <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Duke Yin</span>
+      </a> <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Wake on LAN - Duke Yin</span>
     </div> <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
       <li class="ms-3">
         <a class="text-body-secondary text-decoration-none" href="https://dukeyin.com/" target="_blank" aria-label="dukeyin" style="font-size: 1.5rem;">
@@ -102,10 +97,15 @@ if (file_exists($jsonFile)) {
           <i class="icon-font ico-github"></i>
         </a>
       </li>
-
     </ul>
   </footer>
 </div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  </div>
+</div>
+
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
 <script src="./assets/jquery-3.7.1.min.js"></script>
 <script src="./assets/js/scripts.js"></script>

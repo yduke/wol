@@ -32,6 +32,9 @@ function checkStatus() {
         setInterval(checkStatus, 5000); // 每5秒检测一次
     });
 
+const toastShow = document.getElementById('liveToast')
+const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastShow)
+
 document.querySelectorAll('.send-wol').forEach(btn => {
   btn.addEventListener('click', async () => {
     const mac = btn.dataset.mac;
@@ -48,11 +51,12 @@ document.querySelectorAll('.send-wol').forEach(btn => {
       const res = await fetch('wake.php', { method: 'POST', body: formData });
       const data = await res.json();
       const color = data.ok ? 'success' : 'danger';
-      document.getElementById('result').innerHTML =
-        `<div class="alert alert-${color} mt-3 alert-dismissible fade show">${data.message}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
-    } catch (e) {
-      document.getElementById('result').innerHTML =
-        `<div class="alert alert-danger mt-3">请求失败：${e}</div>`;
+      document.getElementById('liveToast').innerHTML =
+        `<div class="toast-body text-bg-${color}">${data.message}</div>`;
+    toastBootstrap.show();
+      } catch (e) {
+      document.getElementById('liveToast').innerHTML =
+        `<div class="toast-body text-bg-${color}">${data.message}</div>`;
     } finally {
       btn.disabled = false;
       btn.textContent = '唤醒';
