@@ -21,10 +21,10 @@ if (file_exists($jsonFile)) {
   <title>Wake On LAN 控制台</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="./assets/image/power.png">
-  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./assets/icons/iconfont.css" id="iconfont" rel="stylesheet">
-  <link href="./assets/css/main.css" id="main-style" rel="stylesheet">
-  <script src="./assets/js/darkmode.js"></script>
+  <link href="./assets/css/bootstrap.min.css?v=5.3.8" rel="stylesheet">
+  <link href="./assets/icons/iconfont.css?v=<?= APP_VERSION ?>" id="iconfont" rel="stylesheet">
+  <link href="./assets/css/main.css?v=<?= APP_VERSION ?>" id="main-style" rel="stylesheet">
+  <script src="./assets/js/darkmode.js?v=<?= APP_VERSION ?>"></script>
 </head>
 <body class="bg-body-tertiary">
 <header class="p-2 text-bg-dark">
@@ -106,8 +106,8 @@ if (file_exists($jsonFile)) {
   </div>
 </div>
 
-<script src="./assets/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/bootstrap.bundle.min.js?v=5.3.8"></script>
 <script src="./assets/jquery-3.7.1.min.js"></script>
-<script src="./assets/js/scripts.js"></script>
+<script src="./assets/js/scripts.js?v=<?= APP_VERSION ?>"></script>
 </body>
 </html>

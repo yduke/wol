@@ -28,10 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <title>登录 - Wake On LAN 控制台</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./assets/icons/iconfont.css" id="iconfont" rel="stylesheet">
-  <link href="./assets/css/main.css" id="main-style" rel="stylesheet">
-    <script src="./assets/js/darkmode.js"></script>
+  <link href="./assets/css/bootstrap.min.css?v=5.3.8" rel="stylesheet">
+  <link href="./assets/icons/iconfont.css?v=<?= APP_VERSION ?>" id="iconfont" rel="stylesheet">
+  <link href="./assets/css/main.css?v=<?= APP_VERSION ?>" id="main-style" rel="stylesheet">
+    <script src="./assets/js/darkmode.js?v=<?= APP_VERSION ?>"></script>
 </head>
 <body class="bg-body-tertiary">
 <div class="container d-flex justify-content-center align-items-center" style="height:100vh;">
