@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="./assets/js/darkmode.js?v=<?= APP_VERSION ?>"></script>
 </head>
 <body class="bg-body-tertiary">
-<div class="container d-flex justify-content-center align-items-center" style="height:100vh;">
+<div class="container d-flex justify-content-center align-items-center" style="height:80vh;">
   <div class="card shadow-lg p-4" style="max-width:400px; width:100%;">
     <h3 class="text-center mb-4"><i class="icon-font ico-power"></i> 登录</h3>
     <p class="text-center text-body-secondary">登录 Wake on LAN 控制台</p>
